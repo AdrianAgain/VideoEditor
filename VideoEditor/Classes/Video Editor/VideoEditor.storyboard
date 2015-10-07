@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="NML-zv-vSA">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--Video Editor View Controller-->
+        <scene sceneID="Tav-uu-kso">
+            <objects>
+                <viewController id="NML-zv-vSA" customClass="VideoEditorViewController" customModule="VideoEditor" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fyl-mp-Xja"/>
+                        <viewControllerLayoutGuide type="bottom" id="5IO-fM-CVF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nhE-wd-Afh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="C05-YR-T2a" customClass="PlayerView" customModule="VideoEditor" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" red="0.68627450980000004" green="0.69411764710000001" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LYc-K0-vcQ">
+                                <rect key="frame" x="0.0" y="530" width="600" height="70"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dzy-tM-cdX">
+                                        <rect key="frame" x="275" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Dfk-li-Gic"/>
+                                            <constraint firstAttribute="width" constant="50" id="d4q-kX-TK9"/>
+                                        </constraints>
+                                        <state key="normal" title="Play"/>
+                                        <connections>
+                                            <action selector="playAction:" destination="NML-zv-vSA" eventType="touchUpInside" id="uzK-kX-1Vr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOF-QL-C5S">
+                                        <rect key="frame" x="529" y="10" width="55" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="45Z-GP-EOs"/>
+                                            <constraint firstAttribute="width" constant="55" id="g8i-nT-QUr"/>
+                                        </constraints>
+                                        <state key="normal" title="Choose"/>
+                                        <connections>
+                                            <action selector="chooseAction:" destination="NML-zv-vSA" eventType="touchUpInside" id="nmD-v5-lJW"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3dV-wb-xOh">
+                                        <rect key="frame" x="16" y="10" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="50" id="Hvx-If-AL6"/>
+                                            <constraint firstAttribute="height" constant="50" id="oXg-A5-4Lk"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="cancelAction:" destination="NML-zv-vSA" eventType="touchUpInside" id="HpP-CO-2K0"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.12975457702020199" green="0.12975457702020199" blue="0.12975457702020199" alpha="0.73999999999999999" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="1R7-pW-eM2"/>
+                                    <constraint firstItem="dzy-tM-cdX" firstAttribute="centerY" secondItem="LYc-K0-vcQ" secondAttribute="centerY" id="BUP-oZ-k7q"/>
+                                    <constraint firstItem="dzy-tM-cdX" firstAttribute="centerX" secondItem="LYc-K0-vcQ" secondAttribute="centerX" id="In1-W1-9L6"/>
+                                    <constraint firstItem="3dV-wb-xOh" firstAttribute="leading" secondItem="LYc-K0-vcQ" secondAttribute="leading" constant="16" id="K4r-yc-giI"/>
+                                    <constraint firstAttribute="trailing" secondItem="VOF-QL-C5S" secondAttribute="trailing" constant="16" id="Yg4-QG-F9y"/>
+                                    <constraint firstItem="3dV-wb-xOh" firstAttribute="centerY" secondItem="LYc-K0-vcQ" secondAttribute="centerY" id="fb7-Sp-FX3"/>
+                                    <constraint firstItem="VOF-QL-C5S" firstAttribute="centerY" secondItem="LYc-K0-vcQ" secondAttribute="centerY" id="r7m-0A-yyY"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5IO-fM-CVF" firstAttribute="top" secondItem="C05-YR-T2a" secondAttribute="bottom" id="2ZY-do-720"/>
+                            <constraint firstAttribute="trailing" secondItem="C05-YR-T2a" secondAttribute="trailing" id="8dG-7N-Qrn"/>
+                            <constraint firstItem="5IO-fM-CVF" firstAttribute="top" secondItem="LYc-K0-vcQ" secondAttribute="bottom" id="D0z-3B-q6S"/>
+                            <constraint firstItem="LYc-K0-vcQ" firstAttribute="leading" secondItem="nhE-wd-Afh" secondAttribute="leading" id="ReP-Dj-4p4"/>
+                            <constraint firstItem="C05-YR-T2a" firstAttribute="centerX" secondItem="nhE-wd-Afh" secondAttribute="centerX" id="ZLY-q1-Q3c"/>
+                            <constraint firstItem="C05-YR-T2a" firstAttribute="top" secondItem="fyl-mp-Xja" secondAttribute="bottom" id="bTg-aT-dzs"/>
+                            <constraint firstAttribute="trailing" secondItem="LYc-K0-vcQ" secondAttribute="trailing" id="cOg-7q-wf2"/>
+                            <constraint firstItem="C05-YR-T2a" firstAttribute="leading" secondItem="nhE-wd-Afh" secondAttribute="leading" id="rnV-jP-Mam"/>
+                            <constraint firstItem="C05-YR-T2a" firstAttribute="centerY" secondItem="nhE-wd-Afh" secondAttribute="centerY" id="zLY-8d-NOB"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="zLY-8d-NOB"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="3dV-wb-xOh" id="gI4-ve-NCG"/>
+                        <outlet property="chooseButton" destination="VOF-QL-C5S" id="BF3-TS-NdN"/>
+                        <outlet property="playButton" destination="dzy-tM-cdX" id="5r5-iI-CLo"/>
+                        <outlet property="playerView" destination="C05-YR-T2a" id="ldl-pW-iok"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xFX-EU-K8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="354" y="533"/>
+        </scene>
+    </scenes>
+</document>
